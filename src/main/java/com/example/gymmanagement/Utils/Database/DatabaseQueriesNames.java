@@ -1,0 +1,13 @@
+package com.example.gymmanagement.Utils.Database;
+
+public enum DatabaseQueriesNames {
+    ADD_PAYMENT,
+    GET_PAYMENTS_FOR_CURRENT_USER,
+    DELETE_USER_BY_ID,
+    GET_USER_BY_ID,
+    GET_ALL_USERS,
+    GET_DETAILS_FROM_USERNAME,
+    UPDATE_DETAILS_FROM_USERNAME,
+    GET_USER_ID_FROM_USERNAME,
+    GET_USER_FROM_USERNAME
+}

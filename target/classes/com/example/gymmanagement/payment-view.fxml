@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #353C6E;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gymmanagement.Controllers.PaymentController">
+    <center>
+        <AnchorPane prefHeight="670.0" prefWidth="1058.0" style="-fx-background-color: #4691B7;" BorderPane.alignment="CENTER">
+            <children>
+                <Button fx:id="payButton" layoutX="215.0" layoutY="578.0" mnemonicParsing="false" onAction="#createNewPayment" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #353C6E; -fx-text-fill: white; -fx-cursor: hand;" text="Pay" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Button fx:id="goBackButton" layoutX="970.0" layoutY="578.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: #353C6E; -fx-text-fill: white; -fx-cursor: hand;" text="Back" textAlignment="CENTER" textFill="WHITE">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+            <ComboBox fx:id="chooseSubscriptionBox" layoutX="262.0" layoutY="342.0" onAction="#setChooseSubscriptionBox" prefHeight="25.0" prefWidth="262.0" promptText="Select Subscription" visibleRowCount="4">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:id="male1" fx:value="Male - Under 18" />
+                        <String fx:id="female1" fx:value="Female - Under 18" />
+                        <String fx:id="male2" fx:value="Male - Adult" />
+                        <String fx:id="female2" fx:value="Female - Adult" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label layoutX="21.0" layoutY="335.0" text="Subscription Type">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="407.0" text="Amount to pay">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="197.0" text="Time">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            <RadioButton fx:id="monthlyPay" layoutX="414.0" layoutY="202.0" mnemonicParsing="false" onAction="#controlRadioButton" text="Monthly">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="dailyPay" layoutX="262.0" layoutY="202.0" mnemonicParsing="false" onAction="#controlRadioButton" text="Daily">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </RadioButton>
+            <TextField fx:id="amountTextField" editable="false" layoutX="267.0" layoutY="405.0" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #353C6E; -fx-text-fill: white;">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <TableView fx:id="paymentsTable" layoutX="631.0" layoutY="72.0" prefHeight="451.0" prefWidth="447.0">
+              <columns>
+                <TableColumn fx:id="timeColumn" prefWidth="75.0" text="Time" />
+                <TableColumn fx:id="subscriptionColumn" prefWidth="75.0" text="Subscription" />
+                  <TableColumn fx:id="amountColumn" prefWidth="75.0" text="Amount" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <ComboBox fx:id="chooseMonthBox" layoutX="262.0" layoutY="266.0" prefHeight="25.0" prefWidth="262.0" promptText="Select Month" visibleRowCount="12">
+               <items>
+                  <FXCollections fx:factory="observableArrayList">
+                      <String fx:id="m1" fx:value="January" />
+                      <String fx:id="m2" fx:value="February" />
+                      <String fx:id="m3" fx:value="March" />
+                      <String fx:id="m4" fx:value="April" />
+                      <String fx:id="m5" fx:value="May" />
+                      <String fx:id="m6" fx:value="June" />
+                      <String fx:id="m7" fx:value="July" />
+                      <String fx:id="m8" fx:value="August" />
+                      <String fx:id="m9" fx:value="September" />
+                      <String fx:id="m10" fx:value="October" />
+                      <String fx:id="m11" fx:value="November" />
+                      <String fx:id="m12" fx:value="December" />
+
+
+                  </FXCollections>
+               </items>
+            </ComboBox>
+            <Label fx:id="chooseMonthLabel" layoutX="23.0" layoutY="258.0" text="Choose Month">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </center>
+    <top>
+        <AnchorPane prefHeight="100.0" prefWidth="4000.0" style="-fx-background-color: #353C6E;" BorderPane.alignment="CENTER">
+            <children>
+                <Text fill="WHITE" layoutX="536.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payments">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Text>
+            </children></AnchorPane>
+    </top>
+    <left>
+        <AnchorPane prefHeight="740.0" prefWidth="30.0" style="-fx-background-color: #353C6E;" />
+    </left>
+    <right>
+        <AnchorPane prefHeight="670.0" prefWidth="30.0" BorderPane.alignment="CENTER" />
+    </right>
+    <bottom>
+        <Label prefHeight="30.0" prefWidth="263.0" style="-fx-text-fill: black;" text="Gym Management System - Siladi Ciprian © 2022" BorderPane.alignment="CENTER" />
+    </bottom>
+</BorderPane>
